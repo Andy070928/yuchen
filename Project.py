@@ -45,11 +45,9 @@ def right_access():
    
     elif choice == 'n':
         print("You decided to run away but the monster have caught up...")
-        print("You were chased to the edge of a cliff by a monster and fell down.Game over!")
-    else:
         print("Please enter a alid choice!")
         right_access()
 
-# GAME START
-print("Welcome to the adventure game!")
-explore()
+import random
+random_number=random.randrange(0.20)
+print(random_number)
