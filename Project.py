@@ -1,16 +1,15 @@
+import random
 print("Hello")
 print("You are being very dangerous.Please do your best to increase your chances your chances of survival")
-import random
-health = 100
-stamina = 100
-metalsanity = 100
+    
+    
 def explore():
     print("You are in a strange cave")
     print("You have two acesses in front of you,left or right!(Enter 'left' or'right')")
     choice = input().lower ()
     if choice =="left":
-        print("You have entered the left access")
-        left_access()
+            print("You have entered the left access")
+            left_access()
     elif choice =="right":
         print("You have entered the right access")
         right_access()
@@ -18,8 +17,8 @@ def explore():
         print("Please enter a valid choice!")
         explore()
 
-def left_access():
-    print("You have come to a treasure chest...")
+    def left_access():
+        print("You have come to a treasure chest...")
     print("Do you want to open the treasure or not!(Enter 'y' or 'n')")
     choice = input().lower()
     if choice =='y':
@@ -49,5 +48,15 @@ def right_access():
         right_access()
 
 import random
-random_number=random.randrange(0.20)
+health = 100
+stamina = 100
+speed = 100
+
+random_number=random.randrange(0.16)
 print(random_number)
+if random_number == random.randrange:
+    while True:
+        print(f"Current position: {0,15}")
+    direction = input("Enter direction to move or 'exit' to quit: ").strip().lower()
+    if direction == 'exit':
+        print("Exiting the game. Goodbye!")
