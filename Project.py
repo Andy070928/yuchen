@@ -1,8 +1,5 @@
-import random
-print("Hello")
-print("You are being very dangerous.Please do your best to increase your chances your chances of survival")
-    
-    
+import random 
+
 def explore():
     print("You are in a strange cave")
     print("You have two acesses in front of you,left or right!(Enter 'left' or'right')")
@@ -17,8 +14,8 @@ def explore():
         print("Please enter a valid choice!")
         explore()
 
-    def left_access():
-        print("You have come to a treasure chest...")
+def left_access():
+    print("You have come to a treasure chest...")
     print("Do you want to open the treasure or not!(Enter 'y' or 'n')")
     choice = input().lower()
     if choice =='y':
@@ -43,20 +40,50 @@ def right_access():
             print("The monster was too strong.You have been defeated.Game over!")
    
     elif choice == 'n':
+        
         print("You decided to run away but the monster have caught up...")
-        print("Please enter a alid choice!")
+
+        maxDistance = 35
+        playerDistance = 0
+        MonsterDistance = -5
+        PlayerDice = 0
+        MonsterDice = -1
+        turn = 0
+
+        while playerDistance >= MonsterDistance and playerDistance < maxDistance:
+            
+            turn += 1
+
+            while True:
+                x = input("Press 'E' to roll the dice")
+                if x.lower() == 'e':
+                    print("You rolled the dice")
+                    PlayerDice = random.randint(1, 5)
+                    break
+                else : 
+                    print("Please enter a valid choice")
+                    continue
+
+            playerDistance += PlayerDice
+
+            if turn >= 2 :
+                MonsterDice = random.randint(2, 6)
+                MonsterDistance += MonsterDice
+            
+            print (f"Turn : {turn}")
+            print (f"Player's distance : {playerDistance}")
+            print (f"Monster's distance : {MonsterDistance}")
+
+        if playerDistance >= maxDistance:
+            print("You have successfully escaped from the monster!")
+        elif playerDistance < MonsterDistance:
+            print("The monster caught up with you and you were defeated!")
+    
+    else:
+        print("Please enter a valid choice!")
         right_access()
 
-import random
-health = 100
-stamina = 100
-speed = 100
 
-random_number=random.randrange(0.16)
-print(random_number)
-if random_number == random.randrange:
-    while True:
-        print(f"Current position: {0,15}")
-    direction = input("Enter direction to move or 'exit' to quit: ").strip().lower()
-    if direction == 'exit':
-        print("Exiting the game. Goodbye!")
+print("Hello")
+print("You are being very dangerous.Please do your best to increase your chances your chances of survival")
+explore()
